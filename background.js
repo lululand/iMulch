@@ -1,10 +1,17 @@
 console.log("background script running");
 
-chrome.browserAction.onClicked.addListener(buttonClicked)
+chrome.browserAction.onClicked.addListener(function(tab) {
+  console.log("Mulching " + tab.url);
+  // chrome.scripting.executeScript({
+    
+  // })
+});
 
-function buttonClicked(tab) {
-  let msg = {
-    txt: "hello"
-  }
-  chrome.tabs.sendMessage(tab.id, msg);
-}
+// chrome.browserAction.onClicked.addListener(buttonClicked)
+
+// function buttonClicked(tab) {
+//   let msg = {
+//     txt: "hello"
+//   }
+//   chrome.tabs.sendMessage(tab.id, msg);
+// }
